@@ -13,10 +13,10 @@ dp = Dispatcher()
 @dp.message(CommandStart())
 async def start(message: Message):
     await message.answer(
-        "🔥 Добро пожаловать в KRaks Store\n\n"
+        "🔥 Добро пожаловать в Kraks Store\n\n"
         "💎 MAGIC для OXIDE\n"
         "💰 Цена: 280₽ / 1 день\n\n"
-        "📞 Поддержка: @No_Fake_Kraks"
+        "📞 Покупка: @No_Fake_Kraks"
     )
 
 
