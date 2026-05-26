@@ -22,9 +22,18 @@ main_keyboard = InlineKeyboardMarkup(
             )
         ],
         [
-            InlineKeyboardButton(
-                text="📦 Тарифы",
-                callback_data="prices"
+            from aiogram import F
+from aiogram.types import CallbackQuery
+
+
+@dp.callback_query(F.data == "prices")
+async def prices(callback: CallbackQuery):
+    await callback.message.answer(
+        "📦 Тарифы KRaks Store\n\n"
+        "💎 1 День — 280₽\n"
+        "💎 7 Дней — 1200₽\n"
+        "💎 30 Дней — 3500₽"
+    )"
             ),
             InlineKeyboardButton(
                 text="⭐ Отзывы",
