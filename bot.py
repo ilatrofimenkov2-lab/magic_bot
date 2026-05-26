@@ -25,7 +25,7 @@ keyboard = ReplyKeyboardMarkup(
 @dp.message(CommandStart())
 async def start(message: Message):
     await message.answer(
-        "🔥 KRaks Store\n\n"
+        "🔥 Kraks Store\n\n"
         "💎 MAGIC для OXIDE",
         reply_markup=keyboard
     )
