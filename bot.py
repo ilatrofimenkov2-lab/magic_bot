@@ -50,7 +50,7 @@ async def start(message: Message):
         "🔥 Добро пожаловать в Kraks Store\n\n"
         "💎 MAGIC для OXIDE\n"
         "💰 Цена: 280₽ / 1 день\n\n"
-        "📞 покупка: @No_Fake_Kraks"
+        "📞 покупка: @No_Fake_Kraks",
     reply_markup=main_keyboard
     )
 
