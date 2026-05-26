@@ -8,10 +8,11 @@ from aiogram.types import (
     InlineKeyboardButton,
 )
 
-TOKEN = "8956006401:AAEUArB7IsF-ceqJoaTyOajUC_XMdLJ3s2M"
+TOKEN = 8956006401:AAEUArB7IsF-ceqJoaTyOajUC_XMdLJ3s2M"
 
 bot = Bot(token=TOKEN)
-dp = Dispatcher() 
+dp = Dispatcher()
+
 main_keyboard = InlineKeyboardMarkup(
     inline_keyboard=[
         [
@@ -43,7 +44,6 @@ main_keyboard = InlineKeyboardMarkup(
     ]
 )
 
-
 @dp.message(CommandStart())
 async def start(message: Message):
     await message.answer(
@@ -51,13 +51,11 @@ async def start(message: Message):
         "💎 MAGIC для OXIDE\n"
         "💰 Цена: 280₽ / 1 день\n\n"
         "📞 покупка: @No_Fake_Kraks",
-    reply_markup=main_keyboard
+        reply_markup=main_keyboard
     )
-
 
 async def main():
     await dp.start_polling(bot)
-
 
 if __name__ == "__main__":
     asyncio.run(main())
