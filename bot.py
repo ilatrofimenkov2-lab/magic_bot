@@ -6,6 +6,7 @@ from aiogram.types import (
     Message,
     ReplyKeyboardMarkup,
     KeyboardButton,
+    FSInputFile,
 )
 
 TOKEN = "8956006401:AAEUArB7IsF-ceqJoaTyOajUC_XMdLJ3s2M"
@@ -32,7 +33,12 @@ menu = ReplyKeyboardMarkup(
 
 @dp.message(CommandStart())
 async def start(message: Message):
-    await message.answer(
+
+    photo = FSInputFile("banner.jpg")
+
+    await message.answer_photo(
+        photo=photo,
+        caption=
         "🔥 Kraks Store\n\n"
         "💎 Premium Product\n\n"
         "⚡ Быстрая выдача\n"
