@@ -8,16 +8,24 @@ from aiogram.types import (
     KeyboardButton,
 )
 
-TOKEN = "8956006401:AAEUArB7IsF-ceqJoaTyOajUC_XMdLJ3s2M"
+TOKEN = 8956006401:AAEUArB7IsF-ceqJoaTyOajUC_XMdLJ3s2M"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
-keyboard = ReplyKeyboardMarkup(
+menu = ReplyKeyboardMarkup(
     keyboard=[
-        [KeyboardButton(text="💎 Купить")],
-        [KeyboardButton(text="📦 Тарифы")],
-        [KeyboardButton(text="📞 Поддержка")],
+        [
+            KeyboardButton(text="🛒 Купить"),
+            KeyboardButton(text="📦 Тарифы"),
+        ],
+        [
+            KeyboardButton(text="⭐ Отзывы"),
+            KeyboardButton(text="📖 FAQ"),
+        ],
+        [
+            KeyboardButton(text="📞 Поддержка"),
+        ]
     ],
     resize_keyboard=True
 )
@@ -26,27 +34,51 @@ keyboard = ReplyKeyboardMarkup(
 async def start(message: Message):
     await message.answer(
         "🔥 Kraks Store\n\n"
-        "💎 MAGIC для OXIDE",
-        reply_markup=keyboard
+        "💎 Premium Product\n\n"
+        "⚡ Быстрая выдача\n"
+        "⚡ Поддержка 24/7\n"
+        "⚡ Постоянные обновления\n\n"
+        "👇 Выберите действие:",
+        reply_markup=menu
     )
 
 @dp.message()
-async def buttons(message: Message):
+async def menu_handler(message: Message):
 
-    if message.text == "📦 Тарифы":
+    if message.text == "🛒 Купить":
         await message.answer(
-            "📦 Тарифы:\n\n"
-            "💎 1 День — 280₽"
+            "💰 Для покупки напишите:\n"
+            "@No_Fake_Kraks"
         )
 
-    elif message.text == "💎 Купить":
+    elif message.text == "📦 Тарифы":
         await message.answer(
-            "📞 Для покупки: @No_Fake_Kraks"
+            "📦 Тарифы:\n\n"
+            "💎 1 День — 280₽\n"
+            "💎 7 Дней — 1200₽\n"
+            "💎 30 Дней — 3500₽"
+        )
+
+    elif message.text == "⭐ Отзывы":
+        await message.answer(
+            "⭐ Отзывы клиентов:\n\n"
+            "✅ Отличная поддержка\n"
+            "✅ Быстрая выдача\n"
+            "✅ Удобный сервис"
+        )
+
+    elif message.text == "📖 FAQ":
+        await message.answer(
+            "📖 FAQ:\n\n"
+            "❓ Как купить?\n"
+            "— Напишите в поддержку\n\n"
+            "❓ Как получить доступ?\n"
+            "— После оплаты"
         )
 
     elif message.text == "📞 Поддержка":
         await message.answer(
-            "📩 Поддержка: @No_Fake_Kraks"
+            "📩 Поддержка:\n@No_Fake_Kraks"
         )
 
 async def main():
