@@ -8,7 +8,7 @@ from aiogram.types import (
     KeyboardButton,
 )
 
-TOKEN = 8956006401:AAEUArB7IsF-ceqJoaTyOajUC_XMdLJ3s2M"
+TOKEN = "8956006401:AAEUArB7IsF-ceqJoaTyOajUC_XMdLJ3s2M"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
